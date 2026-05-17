@@ -1,0 +1,26 @@
+/* Centra el contenido en la pantalla y le da una fuente limpia */
+.contenedor-principal {
+  max-width: 1000px;
+  margin: 3rem auto;
+  font-family: sans-serif;
+}
+
+/* Fuerza a la tabla a usar todo el ancho y une los bordes */
+.tabla{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* Espacio y lineas separadoras */
+.tabla th, 
+.tabla td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* color encabezado */
+.tabla th {
+  background-color: #ececed;
+  font-weight: bold;
+}

@@ -1,0 +1,14 @@
+# Dependencias de Node (Para evitar subir esa carpeta gigante)
+node_modules/
+
+# Variables de entorno (¡Tus contraseñas y secretos!)
+.env
+
+# Archivos de registro de errores de npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos ocultos del sistema operativo
+.DS_Store
+Thumbs.db
