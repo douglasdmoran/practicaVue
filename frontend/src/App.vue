@@ -19,7 +19,7 @@ const idActual = ref(null) // Guarda el ID del usuario que estamos editando
 
 // GET (Leer)
 const cargarUsuarios = async () => {
-  const response = await fetch('http://localhost:3000/users')
+  const response = await fetch('https://api-practicavue.onrender.com/users')
   usuarios.value = await response.json()
 }
 
@@ -27,14 +27,14 @@ const cargarUsuarios = async () => {
 const guardarUsuario = async () => {
   if (editando.value) {
     // Si estamos editando, hacemos un PUT a la ruta con el ID
-    await fetch(`http://localhost:3000/users/${idActual.value}`, {
+    await fetch(`https://api-practicavue.onrender.com/users/${idActual.value}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formulario.value),
     })
   } else {
     // Si es nuevo, hacemos un POST
-    await fetch('http://localhost:3000/users', {
+    await fetch('https://api-practicavue.onrender.com/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formulario.value),
@@ -49,7 +49,7 @@ const guardarUsuario = async () => {
 // DELETE (Eliminar)
 const eliminarUsuario = async (id) => {
   if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
-    await fetch(`http://localhost:3000/users/${id}`, {
+    await fetch(`https://api-practicavue.onrender.com/users/${id}`, {
       method: 'DELETE',
     })
     cargarUsuarios()
